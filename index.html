@@ -77,7 +77,10 @@
               loading="lazy"
             />
           </div>
-          <div class="gallery__item">
+          <div
+            class="gallery__item"
+            data-video-src="https://www.youtube.com/embed/x6iyz1AQhuU?si=XEWlKQTywGKH9Zbj"
+          >
             <img
               class="gallery__img"
               src="public/gallery/3.png"
@@ -132,6 +135,37 @@
       ea.</small
     >
     <a href="#">Link</a>
+
+    <dialog id="modal">
+      <div>
+        <button class="modal-close" aria-label="Close modal">x</button>
+        <h3>Modal Heading</h3>
+        <p>
+          Lorem <em>ipsum</em> dolor sit amet,
+          <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad
+          <a href="#">minim</a> veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat.
+          <img
+            src="public/gallery/1.png"
+            alt="Modal content"
+            loading="lazy"
+            class="is-hidden"
+          />
+          <iframe
+            class="is-hidden"
+            width="100%"
+            height="auto"
+            src="https://www.youtube.com/embed/x6iyz1AQhuU?si=XEWlKQTywGKH9Zbj"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </p>
+      </div>
+    </dialog>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
