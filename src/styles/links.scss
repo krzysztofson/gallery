@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.45rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: $white;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(-2px);
+  }
+
+  &--primary {
+    background-color: $primary;
+
+    &:hover {
+      background-color: $content;
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary;
+
+    &:hover {
+      background-color: $tertiary;
+    }
+  }
+}
+
+.link-btn-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}

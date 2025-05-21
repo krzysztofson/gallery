@@ -1,0 +1,51 @@
+$gap: 1rem;
+$grid-columns: 3;
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  gap: $gap;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    &--wide {
+      grid-column: span 2;
+
+      @media (max-width: 768px) {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+    }
+
+    &--tall {
+      grid-row: span 2;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  &__play {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+}
