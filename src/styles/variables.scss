@@ -1,0 +1,19 @@
+:root {
+  --primary: #13304a;
+  --secondary: #076d59;
+  --tertiary: #37b971;
+  --quaternary: #e9ece7;
+  --black: #000000;
+  --white: #ffffff;
+  --content: #222222;
+  --danger: #9f0000;
+}
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$tertiary: var(--tertiary);
+$quaternary: var(--quaternary);
+$black: var(--black);
+$white: var(--white);
+$content: var(--content);
+$danger: var(--danger);

@@ -1,0 +1,50 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 38px;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 32px;
+}
+h4 {
+  font-size: 28px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+small {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+a {
+  color: $secondary;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+}
