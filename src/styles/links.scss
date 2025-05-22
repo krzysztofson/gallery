@@ -21,7 +21,13 @@
     background-color: $primary;
 
     &:hover {
-      background-color: $content;
+      background-color: $quaternary;
+      color: $primary;
+
+      svg,
+      path {
+        fill: $primary;
+      }
     }
   }
 
@@ -36,8 +42,11 @@
 
 .link-btn-group {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 15px;
   align-items: center;
-  padding-bottom: 1.5rem;
+  padding-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 }

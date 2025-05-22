@@ -16,7 +16,7 @@
   <body>
     <section class="hero">
       <div class="container container--narrow">
-        <h2 class="text-center">Snippet Heading</h2>
+        <h2 class="container__heading">Snippet Heading</h2>
         <p>
           Lorem <em>ipsum</em> dolor sit amet,
           <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor
@@ -28,7 +28,7 @@
     </section>
     <section>
       <div class="container">
-        <h2 class="text-center">Links</h2>
+        <h2 class="container__heading">Links</h2>
         <div class="link-btn-group">
           <a
             href="http://krzysztofd.netlify.app"
@@ -42,6 +42,8 @@
               viewBox="0 0 18 16"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
             >
               <path
                 d="M9.90316 0.5625C9.73753 0.21875 9.38753 0 9.00316 0C8.61878 0 8.2719 0.21875 8.10316 0.5625L6.09378 4.69688L1.60628 5.35938C1.23128 5.41563 0.918781 5.67812 0.803156 6.0375C0.687531 6.39687 0.78128 6.79375 1.05003 7.05937L4.30628 10.2812L3.53753 14.8344C3.47503 15.2094 3.63128 15.5906 3.94066 15.8125C4.25003 16.0344 4.65941 16.0625 4.99691 15.8844L9.00628 13.7437L13.0157 15.8844C13.3532 16.0625 13.7625 16.0375 14.0719 15.8125C14.3813 15.5875 14.5375 15.2094 14.475 14.8344L13.7032 10.2812L16.9594 7.05937C17.2282 6.79375 17.325 6.39687 17.2063 6.0375C17.0875 5.67812 16.7782 5.41563 16.4032 5.35938L11.9125 4.69688L9.90316 0.5625Z"
@@ -90,7 +92,22 @@
               height="50"
               loading="lazy"
             />
-            <img class="gallery__play" src="public/Play.svg" alt="play icon" />
+            <svg
+              class="gallery__play"
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <rect width="48" height="48" rx="24" fill="#13304A" />
+              <path
+                d="M20.4219 13.8281C19.7281 13.4015 18.8563 13.3875 18.1484 13.7859C17.4406 14.1844 17 14.9344 17 15.75V32.25C17 33.0656 17.4406 33.8156 18.1484 34.2141C18.8563 34.6125 19.7281 34.5937 20.4219 34.1719L33.9219 25.9219C34.5922 25.5141 35 24.7875 35 24C35 23.2125 34.5922 22.4906 33.9219 22.0781L20.4219 13.8281Z"
+                fill="white"
+              />
+            </svg>
           </a>
           <a href="public/gallery/5.png" class="gallery__item">
             <img
@@ -115,29 +132,21 @@
         </div>
       </div>
     </section>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-      sollicitudin, nisi nec efficitur facilisis, nunc ligula convallis ligula,
-      nec tincidunt nunc nisi euismod nunc. Sed at dui id enim fringilla varius.
-      Donec ac felis ut enim facilisis bibendum. Sed malesuada, nunc in
-      facilisis bibendum, nunc nisl aliquet nunc, eget tincidunt nunc nisl
-      euismod nunc.
-    </p>
-    <small
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione placeat
-      vel vitae asperiores cumque, necessitatibus aliquam ex repellendus
-      accusamus officia iste illo molestiae quasi, tempore, rerum nam ullam rem
-      ea.</small
-    >
-    <a href="#">Link</a>
+    <footer class="footer">
+      <div class="container">
+        <small
+          ><strong>Media copyright</strong> - Lorem ipsum dolor sit amet.</small
+        >
+      </div>
+    </footer>
 
-    <dialog id="modal" class="modal">
+    <dialog
+      id="modal"
+      class="modal"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+      aria-modal="true"
+    >
       <div>
         <button class="modal__btn-close" aria-label="Close modal">
           <svg
@@ -146,6 +155,8 @@
             viewBox="0 0 48 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <rect width="48" height="48" rx="24" fill="#9F0000" />
             <path
@@ -154,8 +165,8 @@
             />
           </svg>
         </button>
-        <h3>Modal Heading</h3>
-        <p class="modal__text">
+        <h3 id="modal-title">Modal Heading</h3>
+        <p class="modal__text" id="modal-description">
           Lorem <em>ipsum</em> dolor sit amet,
           <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad

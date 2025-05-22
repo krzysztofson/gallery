@@ -1,4 +1,5 @@
-$gap: 1rem;
+@use "variables" as *;
+$gap: 30px;
 $grid-columns: 3;
 
 .gallery {
@@ -21,6 +22,15 @@ $grid-columns: 3;
 
     &:hover {
       transform: scale(1.01);
+
+      svg,
+      path {
+        fill: $primary;
+      }
+
+      rect {
+        fill: $quaternary;
+      }
     }
 
     &--wide {
