@@ -103,9 +103,6 @@ describe("Application Tests", () => {
     });
 
     it("clicking a gallery item should open the modal", () => {
-      const firstGalleryItem = document.querySelector<HTMLAnchorElement>(
-        ".gallery__item:nth-child(1)"
-      );
       const modal = document.getElementById("modal") as HTMLDialogElement;
 
       expect(modal.open).toBe(false);
