@@ -57,60 +57,61 @@
           >
         </div>
         <div class="gallery">
-          <div class="gallery__item">
+          <a href="public/gallery/1.png" class="gallery__item">
             <img
               class="gallery__img"
-              src="public/gallery/1.png"
+              src="public/gallery/1-thumb.jpeg"
               alt="Gallery item"
               width="76"
               height="100"
               loading="lazy"
             />
-          </div>
-          <div class="gallery__item">
+          </a>
+          <a href="public/gallery/2.png" class="gallery__item">
             <img
               class="gallery__img"
-              src="public/gallery/2.png"
+              src="public/gallery/2-thumb.jpeg"
               alt="Gallery item"
               width="76"
               height="100"
               loading="lazy"
             />
-          </div>
-          <div
+          </a>
+          <a
+            href="public/gallery/3.png"
             class="gallery__item"
             data-video-src="https://www.youtube.com/embed/x6iyz1AQhuU?si=XEWlKQTywGKH9Zbj"
           >
             <img
               class="gallery__img"
-              src="public/gallery/3.png"
+              src="public/gallery/3-thumb.jpeg"
               alt="Gallery item"
               width="76"
               height="50"
               loading="lazy"
             />
             <img class="gallery__play" src="public/Play.svg" alt="play icon" />
-          </div>
-          <div class="gallery__item">
+          </a>
+          <a href="public/gallery/5.png" class="gallery__item">
             <img
               class="gallery__img"
-              src="public/gallery/5.png"
+              src="public/gallery/5-thumb.jpeg"
               alt="Gallery item"
               width="76"
               height="100"
               loading="lazy"
             />
-          </div>
-          <div class="gallery__item">
+          </a>
+          <a href="public/gallery/4.png" class="gallery__item">
             <img
               class="gallery__img"
-              src="public/gallery/4.png"
+              src="public/gallery/4-thumb.jpeg"
               alt="Gallery item"
               width="158"
               height="50"
               loading="lazy"
             />
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -136,34 +137,48 @@
     >
     <a href="#">Link</a>
 
-    <dialog id="modal">
+    <dialog id="modal" class="modal">
       <div>
-        <button class="modal-close" aria-label="Close modal">x</button>
+        <button class="modal__btn-close" aria-label="Close modal">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="48" height="48" rx="24" fill="#9F0000" />
+            <path
+              d="M31.0595 19.0594C31.6454 18.4734 31.6454 17.5219 31.0595 16.9359C30.4735 16.35 29.522 16.35 28.936 16.9359L24.0001 21.8766L19.0595 16.9406C18.4735 16.3547 17.522 16.3547 16.936 16.9406C16.3501 17.5266 16.3501 18.4781 16.936 19.0641L21.8767 24L16.9407 28.9406C16.3548 29.5266 16.3548 30.4781 16.9407 31.0641C17.5267 31.65 18.4782 31.65 19.0642 31.0641L24.0001 26.1234L28.9407 31.0594C29.5267 31.6453 30.4782 31.6453 31.0642 31.0594C31.6501 30.4734 31.6501 29.5219 31.0642 28.9359L26.1235 24L31.0595 19.0594Z"
+              fill="white"
+            />
+          </svg>
+        </button>
         <h3>Modal Heading</h3>
-        <p>
+        <p class="modal__text">
           Lorem <em>ipsum</em> dolor sit amet,
           <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad
           <a href="#">minim</a> veniam, quis nostrud exercitation ullamco
           laboris nisi ut aliquip ex ea commodo consequat.
-          <img
-            src="public/gallery/1.png"
-            alt="Modal content"
-            loading="lazy"
-            class="is-hidden"
-          />
-          <iframe
-            class="is-hidden"
-            width="100%"
-            height="auto"
-            src="https://www.youtube.com/embed/x6iyz1AQhuU?si=XEWlKQTywGKH9Zbj"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
         </p>
+        <img
+          src="public/gallery/1.png"
+          alt="Modal content"
+          loading="lazy"
+          class="is-hidden modal__img"
+        />
+        <iframe
+          class="is-hidden"
+          width="100%"
+          height="auto"
+          src="https://www.youtube.com/embed/x6iyz1AQhuU?si=XEWlKQTywGKH9Zbj"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
     </dialog>
 

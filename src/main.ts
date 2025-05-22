@@ -1,7 +1,7 @@
 import "./styles/main.scss";
 
 function applyGallerySizeClasses() {
-  const items = document.querySelectorAll<HTMLDivElement>(".gallery__item");
+  const items = document.querySelectorAll<HTMLAnchorElement>(".gallery__item");
 
   items.forEach((item) => {
     const img = item.querySelector<HTMLImageElement>(".gallery__img");
@@ -21,7 +21,7 @@ function applyGallerySizeClasses() {
 
 function initGalleryModal() {
   const galleryItems =
-    document.querySelectorAll<HTMLDivElement>(".gallery__item");
+    document.querySelectorAll<HTMLAnchorElement>(".gallery__item");
   const modal = document.getElementById("modal") as HTMLDialogElement;
   if (!modal || galleryItems.length === 0) return;
 
@@ -36,9 +36,9 @@ function initGalleryModal() {
 function setupModalControls(
   modal: HTMLDialogElement,
   modalState: { currentIndex: number },
-  galleryItems: NodeListOf<HTMLDivElement>
+  galleryItems: NodeListOf<HTMLAnchorElement>
 ) {
-  const modalImg = modal.querySelector("img");
+  const modalImg = modal.querySelector<HTMLImageElement>(".modal__img");
   const modalIframe = modal.querySelector("iframe");
   if (!modalImg || !modalIframe) return;
   setupCloseButton(modal);
@@ -60,7 +60,8 @@ function setupModalControls(
 }
 
 function setupCloseButton(modal: HTMLDialogElement) {
-  const closeButton = modal.querySelector<HTMLButtonElement>(".modal-close");
+  const closeButton =
+    modal.querySelector<HTMLButtonElement>(".modal__btn-close");
   if (closeButton) {
     closeButton.addEventListener("click", () => modal.close());
   }
@@ -84,7 +85,7 @@ function setupBackdropClickHandler(modal: HTMLDialogElement) {
 function createKeyboardNavigationHandler(
   modal: HTMLDialogElement,
   modalState: { currentIndex: number },
-  galleryItems: NodeListOf<HTMLDivElement>,
+  galleryItems: NodeListOf<HTMLAnchorElement>,
   modalImg: HTMLImageElement,
   modalIframe: HTMLIFrameElement
 ) {
@@ -102,7 +103,7 @@ function createKeyboardNavigationHandler(
 function navigateGallery(
   direction: "next" | "prev",
   modalState: { currentIndex: number },
-  galleryItems: NodeListOf<HTMLDivElement>,
+  galleryItems: NodeListOf<HTMLAnchorElement>,
   modalImg: HTMLImageElement,
   modalIframe: HTMLIFrameElement
 ) {
@@ -119,7 +120,7 @@ function navigateGallery(
 
 function updateModalContent(
   index: number,
-  galleryItems: NodeListOf<HTMLDivElement>,
+  galleryItems: NodeListOf<HTMLAnchorElement>,
   modalImg: HTMLImageElement,
   modalIframe: HTMLIFrameElement,
   modalState: { currentIndex: number }
@@ -144,10 +145,9 @@ function updateModalContent(
     modalIframe.classList.add("is-hidden");
     stopVideo(modalIframe);
 
-    const img = item.querySelector<HTMLImageElement>(".gallery__img");
-    if (!img) return;
-    modalImg.src = img.src;
-    modalImg.alt = img.alt || "Gallery item";
+    modalImg.src = item.href; // Use href from the <a> tag
+    const innerImg = item.querySelector<HTMLImageElement>(".gallery__img");
+    modalImg.alt = innerImg ? innerImg.alt || "Gallery item" : "Gallery item";
   }
   modalState.currentIndex = index;
 }
@@ -157,16 +157,17 @@ function stopVideo(modalIframe: HTMLIFrameElement) {
 }
 
 function attachGalleryItemClickHandlers(
-  galleryItems: NodeListOf<HTMLDivElement>,
+  galleryItems: NodeListOf<HTMLAnchorElement>,
   modal: HTMLDialogElement,
   modalState: { currentIndex: number }
 ) {
-  const modalImg = modal.querySelector("img");
+  const modalImg = modal.querySelector<HTMLImageElement>(".modal__img");
   const modalIframe = modal.querySelector("iframe");
   if (!modalImg || !modalIframe) return;
 
   galleryItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
       updateModalContent(
         index,
         galleryItems,
