@@ -20,6 +20,11 @@
   &--primary {
     background-color: $primary;
 
+    svg,
+    path {
+      fill: $quaternary;
+    }
+
     &:hover {
       background-color: $quaternary;
       color: $primary;

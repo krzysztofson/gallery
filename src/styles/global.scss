@@ -1,3 +1,9 @@
+@use "variables" as *;
+
+body {
+  background-color: $white;
+}
+
 .container {
   padding-inline: 30px;
   margin-inline: auto;

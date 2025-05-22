@@ -9,6 +9,19 @@
   --danger: #9f0000;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #e9ece7; /* Darker primary */
+    --secondary: #37b971; /* Darker secondary */
+    --tertiary: #2a8c56; /* Darker tertiary */
+    --quaternary: #3a3f3b; /* Darker quaternary for dark background */
+    --black: #ffffff; /* In dark mode, "black" can become white for text */
+    --white: #1c1c1c; /* In dark mode, "white" can become a dark background */
+    --content: #e0e0e0; /* Lighter content text for dark background */
+    --danger: #cf6679; /* A common dark mode danger color */
+  }
+}
+
 $primary: var(--primary);
 $secondary: var(--secondary);
 $tertiary: var(--tertiary);
