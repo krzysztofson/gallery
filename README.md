@@ -1,8 +1,8 @@
 # gallery
 
-# gallery
-
 Gallery page application.
+
+[Preview link](https://smart-gallery-kd.netlify.app)
 
 ## Development
 
